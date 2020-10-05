@@ -16,8 +16,10 @@ class User extends ActiveRecordEntity
      * @var false|null|string $passwordHash;
      */
     protected $passwordHash;
+
     protected string $authToken;
-    protected string $createdAt;
+
+   protected string $createdAt;
 
     public function getNickname(): string
     {
@@ -33,6 +35,15 @@ class User extends ActiveRecordEntity
     {
         return 'users';
     }
+
+    /**
+     * @return string
+     */
+    public function getAuthToken(): string
+    {
+        return $this->authToken;
+    }
+
 
     public static function signUp(array $userData): User
     {

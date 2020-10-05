@@ -6,11 +6,19 @@ namespace AYakovlev\Core;
 
 use AYakovlev\Model\User;
 
-class UserAuthService
+class UsersAuthService
 {
     public static function createToken(User $user): void
     {
         $token = $user->getId() . ':' . $user->getAuthToken();
+
+        // имя
+        // значение
+        // срок действия: 0 - при закрытии браузера
+        // путь: / - куки доступны во всем домене
+        // домен
+        // secure: false - можно передавать по http
+        // Если задано TRUE, cookie будут доступны только через HTTP-протокол
         setcookie('token', $token, 0, '/', '', false, true);
     }
 

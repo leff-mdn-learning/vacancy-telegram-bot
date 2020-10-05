@@ -6,6 +6,7 @@ namespace AYakovlev\Controller;
 
 use AYakovlev\Core\EmailSender;
 use AYakovlev\Core\Request;
+use AYakovlev\Core\UsersAuthService;
 use AYakovlev\Core\View;
 use AYakovlev\Exception\InvalidArgumentException;
 use AYakovlev\Model\User;
@@ -60,6 +61,9 @@ class UsersController
         if (!empty($_POST)) {
             try {
                 $user = User::login($_POST);
+                UsersAuthService::createToken($user);
+                header('Location: /');
+                exit();
             } catch (InvalidArgumentException $e) {
                 View::render('login', ['error' => $e->getMessage()]);
                 return;
