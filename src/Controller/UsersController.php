@@ -57,6 +57,15 @@ class UsersController
 
     public function login()
     {
+        if (!empty($_POST)) {
+            try {
+                $user = User::login($_POST);
+            } catch (InvalidArgumentException $e) {
+                View::render('login', ['error' => $e->getMessage()]);
+                return;
+            }
+        }
+
         View::render('login');
     }
 }
