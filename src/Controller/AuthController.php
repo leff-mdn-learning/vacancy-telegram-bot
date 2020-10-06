@@ -4,7 +4,7 @@
 namespace AYakovlev\Controller;
 
 
-class AuthController
+class AuthController extends AbstractController
 {
     public function index(): void
     {
