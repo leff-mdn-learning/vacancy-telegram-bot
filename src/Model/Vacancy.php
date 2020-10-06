@@ -25,15 +25,9 @@ class Vacancy extends ActiveRecordEntity
 
     public function __construct()
     {
-        $this->id = Request::$params[3];
-    }
-
-    /**
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
+        if (isset(Request::$params[3])) {
+            $this->id = Request::$params[3];
+        }
     }
 
     /**
