@@ -46,7 +46,7 @@ class Request
         }
 
         $numberParams = count($uri);
-        if ($numberParams > 3) {
+        if ($numberParams >= 3) {
             $i = 3;
             while ($i <= $numberParams) {
                 self::$params[$i] = $uri[$i];

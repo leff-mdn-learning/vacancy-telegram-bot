@@ -9,6 +9,8 @@ use AYakovlev\Model\User;
 
 class ArticleController extends AbstractController
 {
+    private int $idArticle;
+
     public function getIdArticle(): int
     {
         return $this->idArticle;

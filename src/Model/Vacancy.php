@@ -4,8 +4,12 @@
 namespace AYakovlev\Model;
 
 
+use AYakovlev\Core\Request;
+
 class Vacancy extends ActiveRecordEntity
 {
+    protected ?int $id;
+
     protected string $title;
     protected int $price;
     protected string $organization;
@@ -18,6 +22,19 @@ class Vacancy extends ActiveRecordEntity
     protected string $datecreation;
     protected int $reserv;
     protected string $category;
+
+    public function __construct()
+    {
+        $this->id = Request::$params[3];
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
 
     /**
      * @return string
