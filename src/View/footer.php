@@ -2,7 +2,8 @@
 <td width="300px" class="sidebar">
     <div class="sidebarHeader">Follow to:</div>
     <ul>
-        <li><a href="/">Main page</a></li>
+        <li><a href="/blog/articles">Patterns</a></li>
+        <li><a href="/vacs/vacancies">Vacancies</a></li>
         <li><a href="/aboutme/about">About me...</a></li>
     </ul>
 </td>
