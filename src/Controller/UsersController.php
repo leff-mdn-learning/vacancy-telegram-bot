@@ -12,19 +12,8 @@ use AYakovlev\Exception\InvalidArgumentException;
 use AYakovlev\Model\User;
 use AYakovlev\Model\UserActivationService;
 
-class UsersController
+class UsersController extends AbstractController
 {
-    /** @var View */
-    private View $view;
-    /** @var User|null */
-    private ?User $user;
-
-    public function __construct()
-    {
-        $this->user = UsersAuthService::getUserByToken();
-        $this->view = new View();
-        $this->view->setVar('user', $this->user);
-    }
 
     public function signUp()
     {
@@ -75,5 +64,11 @@ class UsersController
         }
 
         View::render('login');
+    }
+
+    public function logOut()
+    {
+        setcookie('token', '', -1, '/', '', false, true);
+        header('Location: /');
     }
 }

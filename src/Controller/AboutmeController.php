@@ -6,7 +6,7 @@ namespace AYakovlev\Controller;
 
 use AYakovlev\Core\View;
 
-class AboutmeController
+class AboutmeController extends AbstractController
 {
     public function about()
     {
