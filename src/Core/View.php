@@ -6,9 +6,17 @@ namespace AYakovlev\Core;
 
 class View
 {
+    public static array $extraVars = [];
+
+    public function setVar(string $name, $value): void
+    {
+        self::$extraVars[$name] = $value;
+    }
+
     public static function render(string $view, array $data = [], int $code = 200): void
     {
         http_response_code($code);
+        extract(self::$extraVars);
         $viewPath = __DIR__ . "/../View/" . $view . ".tpl.php";
 
         if (file_exists($viewPath)) {

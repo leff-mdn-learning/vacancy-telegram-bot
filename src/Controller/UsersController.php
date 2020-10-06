@@ -16,10 +16,14 @@ class UsersController
 {
     /** @var View */
     private View $view;
+    /** @var User|null */
+    private ?User $user;
 
     public function __construct()
     {
+        $this->user = UsersAuthService::getUserByToken();
         $this->view = new View();
+        $this->view->setVar('user', $this->user);
     }
 
     public function signUp()
