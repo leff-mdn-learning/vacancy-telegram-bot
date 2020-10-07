@@ -7,6 +7,6 @@ class DefaultController
 {
     public function index()
     {
-        header('Location: /blog/articles');
+        header('Location: /vacs/vacancies');
     }
 }
