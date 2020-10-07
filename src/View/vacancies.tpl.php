@@ -6,12 +6,10 @@
 ?>
 <?php include 'header.php'; ?>
 <?php foreach ($data as $vacancy): ?>
-    <h2><a href="/vacancy/view/<?= $vacancy->getId(); ?>"><?= $vacancy->getTitle() ?></a></h2>
-    <h3><b><?= $vacancy->getTitle(); ?> </b><br>
+    <h2><a href="/vacancy/view/<?= $vacancy->getId(); ?>"><?= $vacancy->getTitle() ?></a><br>
         (id #<?= $vacancy->getId(); ?>)
-    </h3>
+    </h2>
     <h5>Created: <?= $vacancy->getDatecreation(); ?></h5>
-
     <p>
         <b>Зарплата:</b> <?= $vacancy->getPrice(); ?><br>
         <b>Организация:</b> <?= $vacancy->getOrganization(); ?><br>
