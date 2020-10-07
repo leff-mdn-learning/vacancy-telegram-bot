@@ -15,7 +15,7 @@ class VacsController extends AbstractController
         echo "Index";
     }
 
-    public function articles()
+    public function view()
     {
         $data = Vacancy::getAll();
         View::render("vacancies", $data);
