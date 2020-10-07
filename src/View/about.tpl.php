@@ -4,8 +4,6 @@
 
 <h3>Name: [Anonymous]</h3>
 
-<h3>Age: [Sum of years lived]</h3>
-
 <p><h4>Slogan:</h4>
 The nut of knowledge is hard,<br>
 But we are'nt used to retreating,<br>
